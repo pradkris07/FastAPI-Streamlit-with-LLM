@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: python-docker-service
+    env: docker
+    repo: https://github.com/pradkris07/FastAPI-Streamlit-with-LLM.git
+    branch: main
+    region: oregon
+    plan: free
+    autoDeploy: false

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FastAPI → Streamlit Launcher</title>
+	<link rel="stylesheet" href="/static/style.css">
+</head>
+<body style="font-family: Arial; margin: 40px;">
+    <h2>Welcome to the Streamlit Launcher</h2>
+    <p>Select a Streamlit app below and FastAPI will launch it.</p>
+
+    <form method="post" action="/start-app">
+        <label>
+            <input type="radio" name="selection" value="University" required>
+            Best Universities
+        </label><br>
+
+        <label>
+            <input type="radio" name="selection" value="Movies">
+            Movie Recommender
+        </label><br><br>
+
+        <button type="submit">Launch</button>
+    </form>
+
+    {% if message %}
+        <p style="color: black;">{{ message }}</p>
+    {% endif %}
+</body>
+</html>

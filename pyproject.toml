@@ -1,0 +1,15 @@
+[project]
+name = "fastapi-streamlit-with-llm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "dotenv>=0.9.9",
+    "fastapi>=0.121.2",
+    "langchain-core>=1.0.5",
+    "langchain-groq>=1.0.1",
+    "python-multipart>=0.0.20",
+    "streamlit>=1.51.0",
+    "uvicorn>=0.38.0",
+]
