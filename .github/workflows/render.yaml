@@ -21,5 +21,5 @@ jobs:
         env: 
           FASTAPP_RENDER_KEY: ${{secrets.FASTAPP_RENDER_KEY}}
         run: |
-          curl -X POST https://api.render.com/deploy.srv-d4dcjs49c44c7399tl90?key=$FASTAPP_RENDER_KEY
+          curl -X POST https://api.render.com/deploy.srv-d4ddotc9c44c739al8v0?key=$FASTAPP_RENDER_KEY
 
