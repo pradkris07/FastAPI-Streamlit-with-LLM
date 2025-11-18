@@ -1,6 +1,5 @@
 artifact
 venv
-env
 .gitignore
 logs
 template.py
