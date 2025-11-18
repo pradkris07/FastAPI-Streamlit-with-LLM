@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎞️ Movie Recommender</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>🎞️ Movie Recommender</h1>
+
+<!-- Form 1: Generate movies -->
+<form method="post" action="/movies/generate">
+    <label for="language">Choose a language:</label>
+    <select name="language" id="language">
+        {% for lang in languages %}
+            <option value="{{lang}}" {% if lang == selected_language %}selected{% endif %}>{{lang}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Generate Movies</button>
+</form>
+
+{% if top_10_movies %}
+    <h2>📜 Top 10 Movies in {{selected_language}}</h2>
+    <ul>
+        {% for movie in top_10_movies %}
+            <li>{{movie}}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Form 2: Show description -->
+    <form method="post" action="/movies/details">
+        <label for="selected_movie">Select a movie to see details:</label>
+        <select name="selected_movie" id="selected_movie">
+            {% for item in menu_items %}
+                <option value="{{item}}" {% if item == selected_movie %}selected{% endif %}>{{item}}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Hidden field to keep the movie list for this request -->
+        {% for movie in top_10_movies %}
+            <input type="hidden" name="top_10_movies" value="{{movie}}">
+        {% endfor %}
+
+        <input type="hidden" name="selected_language" value="{{selected_language}}">
+        <button type="submit">Show Details</button>
+    </form>
+
+    {% if movie_desc %}
+        <h3>📖 {{selected_movie}}</h3>
+        <p>{{movie_desc}}</p>
+		
+		<a href="/" class="back-btn">
+            <button type="button">⬅ Back to Home</button>
+        </a>
+    {% endif %}
+{% endif %}
+</body>
+</html>

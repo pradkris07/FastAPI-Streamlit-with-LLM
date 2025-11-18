@@ -31,4 +31,4 @@ COPY . /app
 EXPOSE 10000
 
 # Default command to run FastAPI
-CMD ["uv", "run", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "10000"]
+CMD ["uv", "run", "uvicorn", "app_fastapi:app", "--host", "0.0.0.0", "--port", "10000"]

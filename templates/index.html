@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>FastAPI → Streamlit Launcher</title>
-	<link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Apps Launcher</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/style.css" />
 </head>
-<body style="font-family: Arial; margin: 40px;">
-    <h2>Welcome to the Streamlit Launcher</h2>
-    <p>Select a Streamlit app below and FastAPI will launch it.</p>
 
-    <form method="post" action="/start-app">
-        <label>
-            <input type="radio" name="selection" value="University" required>
-            Best Universities
-        </label><br>
+<body>
+    <div class="container">
 
-        <label>
-            <input type="radio" name="selection" value="Movies">
-            Movie Recommender
-        </label><br><br>
+        <h1 style="text-align:center; margin-bottom: 30px;">AI App Launcher</h1>
 
-        <button type="submit">Launch</button>
-    </form>
+        <div class="card-grid">
+            <!-- Movies App -->
+            <div class="card">
+                <h2>🎬 Movies App</h2>
+                <p>Find trending movies by language & view details.</p>
+                <a href="/movies">
+                    <button class="btn">Launch Movies App</button>
+                </a>
+            </div>
 
-    {% if message %}
-        <p style="color: black;">{{ message }}</p>
-    {% endif %}
+            <!-- University App -->
+            <div class="card">
+                <h2>🎓 University App</h2>
+                <p>Explore top universities and STEM courses.</p>
+                <a href="/universities">
+                    <button class="btn">Launch University App</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>

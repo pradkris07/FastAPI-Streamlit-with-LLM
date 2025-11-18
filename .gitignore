@@ -26,7 +26,7 @@ share/python-wheels/
 *.egg
 MANIFEST
 .env
-main.py
+steps.txt
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
